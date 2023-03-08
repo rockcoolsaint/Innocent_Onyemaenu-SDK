@@ -26,12 +26,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const liblab_sdk_1 = __importDefault(require("liblab-sdk"));
+const liblab_sdk_1 = __importDefault(require("@rockcoolsaint/liblab-sdk"));
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const client = new liblab_sdk_1.default({
     authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
 });
 client.getMovies().then(p => {
+    console.log(p);
+});
+client.getMovieById("5cd95395de30eff6ebccde5c").then(p => {
+    console.log(p);
+});
+client.getMovieQuotes("5cd95395de30eff6ebccde5c").then(p => {
     console.log(p);
 });

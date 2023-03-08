@@ -1,4 +1,4 @@
-import OneApi from "liblab-sdk";
+import OneApi from "@rockcoolsaint/liblab-sdk";
 import * as dotenv from "dotenv";
 
 dotenv.config();
@@ -8,5 +8,13 @@ const client = new OneApi({
 })
 
 client.getMovies().then(p => {
+  console.log(p);
+})
+
+client.getMovieById("5cd95395de30eff6ebccde5c").then(p => {
+  console.log(p);
+})
+
+client.getMovieQuotes("5cd95395de30eff6ebccde5c").then(p => {
   console.log(p);
 })
